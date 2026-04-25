@@ -78,6 +78,11 @@ b
 			expected: []string{strings.Repeat("a", 65537)},
 		},
 		{
+			name:     "crlf-row",
+			in:       "a\r\nb",
+			expected: []string{"a\r", "b"},
+		},
+		{
 			name:     "half-reader",
 			in:       strings.Repeat("a", 1025),
 			wrappers: []Wrapper{iotest.HalfReader},
